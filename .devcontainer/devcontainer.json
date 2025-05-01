@@ -1,0 +1,26 @@
+{
+    "name": "${containerWorkspaceFolderBasename}",
+    "build": {
+        "context": ".",
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {}
+    },
+    "containerEnv": {
+        "TZ": "Asia/Tokyo"
+    },
+    "forwardPorts": [5173],
+    
+    "remoteUser": "vscode",
+    "postStartCommand": "sudo chown -R vscode:vscode ${containerWorkspaceFolder}",
+    
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint"
+            ]
+        }
+    }
+  }
